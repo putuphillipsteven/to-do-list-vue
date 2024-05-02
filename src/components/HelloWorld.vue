@@ -1,19 +1,12 @@
 <script setup>
-import { ref } from 'vue';
-
 defineProps({
 	msg: String,
+	rawHtml: String,
 });
-
-const count = ref(0);
 </script>
 
 <template>
 	<h1>{{ msg }}</h1>
+	<p>Using text interpolation: <span class="text-red-500">This should be red.</span></p>
+	<p>Using v-html directive: <span v-html="rawHtml" class="text-red-500"></span></p>
 </template>
-
-<style scoped>
-.read-the-docs {
-	color: #888;
-}
-</style>
